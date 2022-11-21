@@ -82,7 +82,7 @@ app.get("/url/sentiment", (req,res) => {
 
     const nluInstance = getNLUInstance();
 
-    naturalLanguageUnderstandingInstance.analyze(analyzeParams)
+    nluInstance.analyze(analyzeParams)
     .then(analysisResults => {
         return res.send(analysisResults.result.keywords[0].sentiment, null, 2);
     })
